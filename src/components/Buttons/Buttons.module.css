@@ -1,0 +1,11 @@
+.button{
+    padding: 10px;
+    background-color: goldenrod;
+    border:none;
+    border-radius: 15%;
+    margin-left: 15px;
+}
+
+/* .button:not(:last-child){
+    margin-right: 15px;
+} */
