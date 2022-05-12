@@ -1,9 +1,8 @@
 import { Component } from 'react';
 import { Section } from './Section';
-import { Buttons } from './Buttons';
+import { FeedbackOptions } from './FeedbackOptions';
 import { Statistics } from './Statistics';
 import { Notification } from './Notification';
-import { prettyDOM } from '@testing-library/react';
 
 export class App extends Component {
   state = { good: 0, neutral: 0, bad: 0 };
@@ -22,6 +21,7 @@ export class App extends Component {
   };
 
   handleButton = event => {
+    event.preventDefault();
     const { name } = event.currentTarget;
     this.setState(prevState => {
       return { [name]: prevState[name] + 1 };
@@ -34,7 +34,7 @@ export class App extends Component {
     return (
       <div className="container">
         <Section title={'Please leave feedback'}>
-          <Buttons
+          <FeedbackOptions
             options={Object.keys(this.state)}
             handleButton={this.handleButton}
           />
