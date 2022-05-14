@@ -18,6 +18,6 @@ export const FeedbackOptions = ({ options, handleButton }) => {
 };
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.object.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
   handleButton: PropTypes.func.isRequired,
 };
